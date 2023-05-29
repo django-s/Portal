@@ -1,0 +1,52 @@
+[gd_resource type="VisualShader" load_steps=5 format=3 uid="uid://dt44x5qn6ygkx"]
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_pouwu"]
+parameter_name = "TextureAlbedo"
+texture_type = 1
+texture_filter = 2
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1xn7a"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_gwcxx"]
+source = 5
+texture = SubResource("PlaceholderTexture2D_1xn7a")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_eewbs"]
+input_name = "screen_uv"
+
+[resource]
+code = "shader_type spatial;
+render_mode cull_disabled, unshaded;
+
+uniform sampler2D TextureAlbedo : source_color, filter_linear;
+
+
+
+void fragment() {
+// Input:6
+	vec2 n_out6p0 = SCREEN_UV;
+
+
+	vec4 n_out5p0;
+// Texture2D:5
+	n_out5p0 = texture(TextureAlbedo, n_out6p0);
+
+
+// Output:0
+	ALBEDO = vec3(n_out5p0.xyz);
+
+
+}
+"
+graph_offset = Vector2(-623.057, -126.725)
+modes/cull = 2
+flags/unshaded = true
+nodes/fragment/0/position = Vector2(120, -220)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture2DParameter_pouwu")
+nodes/fragment/4/position = Vector2(-600, -100)
+nodes/fragment/5/node = SubResource("VisualShaderNodeTexture_gwcxx")
+nodes/fragment/5/position = Vector2(-200, -100)
+nodes/fragment/6/node = SubResource("VisualShaderNodeInput_eewbs")
+nodes/fragment/6/position = Vector2(-600, -200)
+nodes/fragment/connections = PackedInt32Array(4, 0, 5, 2, 6, 0, 5, 0, 5, 0, 0, 0)

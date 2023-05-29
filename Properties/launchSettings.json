@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Portal": {
+      "commandName": "Executable",
+      "commandLineArgs": "--path.--verbose",
+      "workingDirectory": ".",
+      "nativeDebugging": true
+    }
+  }
+}

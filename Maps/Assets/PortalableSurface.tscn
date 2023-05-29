@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhn56m3wu1n4o"]
+
+[ext_resource type="Script" path="res://Maps/Assets/PortalableSurface.cs" id="1_kjdct"]
+
+[node name="PortalableSurface" type="Area3D"]
+collision_layer = 4
+collision_mask = 0
+input_ray_pickable = false
+monitoring = false
+script = ExtResource("1_kjdct")

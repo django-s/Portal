@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyuxx15xsw13v"]
+
+[ext_resource type="Script" path="res://Objects/PortalManager/PortalManager.cs" id="1_mw1vu"]
+
+[node name="PortalManager" type="Node3D"]
+script = ExtResource("1_mw1vu")

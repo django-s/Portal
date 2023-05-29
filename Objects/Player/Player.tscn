@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjgf83cp40r5u"]
+
+[ext_resource type="Script" path="res://Objects/Player/Player.cs" id="1_o0jvl"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_unipv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhisy"]
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+wall_min_slide_angle = 0.872665
+script = ExtResource("1_o0jvl")
+
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Camera" type="Camera3D" parent="Head"]
+far = 1000.0
+
+[node name="RayCast" type="RayCast3D" parent="Head"]
+target_position = Vector3(0, 0, -100)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("CapsuleMesh_unipv")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("CapsuleShape3D_xhisy")

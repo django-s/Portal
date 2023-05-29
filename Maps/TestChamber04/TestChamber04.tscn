@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://fofc0pvmks4a"]
+
+[ext_resource type="PackedScene" uid="uid://cyuxx15xsw13v" path="res://Objects/PortalManager/PortalManager.tscn" id="1_dy7sy"]
+[ext_resource type="PackedScene" uid="uid://bjgf83cp40r5u" path="res://Objects/Player/Player.tscn" id="2_h05wb"]
+[ext_resource type="PackedScene" uid="uid://cybu1x3qjp3yr" path="res://Maps/TestChamber04/Map.glb" id="3_4qs0t"]
+[ext_resource type="Script" path="res://Maps/Assets/MapConstructor.cs" id="4_sabgw"]
+
+[sub_resource type="Environment" id="Environment_qddy7"]
+background_mode = 1
+background_color = Color(0.572549, 0.529412, 0.533333, 1)
+background_energy_multiplier = 2.7
+ssao_enabled = true
+ssao_radius = 5.0
+
+[node name="TestChamber04" type="Node3D"]
+
+[node name="Map" parent="." instance=ExtResource("3_4qs0t")]
+script = ExtResource("4_sabgw")
+
+[node name="PortalManager" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_dy7sy")]
+player = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("2_h05wb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24044, 2.56379, 0)
+wall_min_slide_angle = 0.261799
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qddy7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.41739, 0.167309, -0.893193, 0.374436, 0.863923, 0.3368, 0.828, -0.47502, 0.297946, -13.6362, 11.7903, 13.3014)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, -6.79618, 5, -17)
+light_color = Color(0.690196, 0.690196, 0.690196, 1)
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+distance_fade_begin = 0.0
+spot_range = 12.0
+spot_attenuation = 0.466517
+spot_angle = 66.65
