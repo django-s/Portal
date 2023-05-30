@@ -20,9 +20,10 @@ script = ExtResource("4_sabgw")
 [node name="PortalManager" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_dy7sy")]
 player = NodePath("../Player")
 
-[node name="Player" parent="." instance=ExtResource("2_h05wb")]
+[node name="Player" parent="." node_paths=PackedStringArray("portalManager") instance=ExtResource("2_h05wb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24044, 2.56379, 0)
 wall_min_slide_angle = 0.261799
+portalManager = NodePath("../PortalManager")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qddy7")

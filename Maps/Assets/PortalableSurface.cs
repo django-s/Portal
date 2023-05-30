@@ -75,7 +75,7 @@ public partial class PortalableSurface : Node3D
             return null;
 
         var portalPosition2 = portalPositionNullable.Value;
-        var wallOffset = -0.101f;
+        var wallOffset = -0.151f;
         var portalPosition3 = new Vector3(portalPosition2.X, portalPosition2.Y, wallOffset);
 
         var portal = AddNewPortal(portalPosition3);

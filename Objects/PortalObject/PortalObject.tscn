@@ -16,7 +16,7 @@ monitorable = false
 script = ExtResource("1_kumex")
 
 [node name="PortalMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.15)
 layers = 2
 cast_shadow = 0
 ignore_occlusion_culling = true
